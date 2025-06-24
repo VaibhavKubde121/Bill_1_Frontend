@@ -27,7 +27,7 @@ export default function Form() {
       companyLogo: "",
       currency: DEFAULT_CURRENCY.code,
       invoiceNumber: "",
-      invoiceDate: new Date().toLocaleDateString("en-CA"), // ✅ Local date
+      invoiceDate: new Date().toLocaleDateString("en-CA"),
       billingName: "",
       billingPhone: "",
       billingAddress: "",
@@ -126,7 +126,7 @@ export default function Form() {
           companyLogo: "",
           currency: DEFAULT_CURRENCY.code,
           invoiceNumber: "",
-          invoiceDate: new Date().toLocaleDateString("en-CA"), // ✅ Reset with local date
+          invoiceDate: new Date().toLocaleDateString("en-CA"),
           billingName: "",
           billingPhone: "",
           billingAddress: "",
@@ -309,10 +309,14 @@ export default function Form() {
             </div>
           </Grid>
 
+          {/* ✅ Button container with spacing */}
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
+              flexWrap: "wrap",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: "16px",
               marginTop: "20px",
             }}
           >
@@ -320,7 +324,13 @@ export default function Form() {
             <button
               type="button"
               onClick={handleResetInvoice}
-              style={{ backgroundColor: "red", color: "white" }}
+              style={{
+                backgroundColor: "red",
+                color: "white",
+                border: "none",
+                padding: "8px 16px",
+                cursor: "pointer",
+              }}
             >
               Reset Invoice No.
             </button>
